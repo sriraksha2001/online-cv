@@ -1,0 +1,588 @@
+<!-- ======= Mobile nav toggle button ======= -->
+<button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+<!-- ======= Header ======= -->
+<header id="header">
+  <div class="d-flex flex-column">
+
+    <div class="profile">
+      <img src="https://media-exp1.licdn.com/dms/image/C4D03AQEYYaHWQHO9UQ/profile-displayphoto-shrink_400_400/0/1653146704300?e=1665014400&v=beta&t=EW4GJXfjtrHSo8sHeg2i0M-C6u64UwElTrccvp3QgME" alt="" class="img-fluid rounded-circle">
+      <h1 class="text-light"><a href="index.html" style="color: yellow;">Sri Raksha B</a></h1>
+      <div class="social-links mt-3 text-center">
+        <a href="https://www.linkedin.com/in/sri-raksha-b-poojary-87793520a/" id="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/sriraksha2001" id="github"><i class="bx bxl-github"></i></a>
+        
+       
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href="index.html"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+        <li><a href="#contact"><i class="bx bx-user"></i> <span>Contact</span></a></li>
+        <!-- <li><a href="#portfolio"><i class="bx bx-book-content"></i> Portfolio</a></li> -->
+        
+        <li *ngIf="auth.user | async as user" class="text-light">
+          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQEYYaHWQHO9UQ/profile-displayphoto-shrink_400_400/0/1653146704300?e=1665014400&v=beta&t=EW4GJXfjtrHSo8sHeg2i0M-C6u64UwElTrccvp3QgME" alt="Your Profile" width="30px" class="rounded-circle">
+        </li>
+        <li *ngIf="auth.user | async as user" class="text-light">
+          <div>{{user.email}}</div>
+          <span>{{user.displayName}}</span>
+        </li>
+       
+      </ul>
+    </nav><!-- .nav-menu -->
+    <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  </div>
+</header><!-- End Header -->
+
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+  <div class="hero-container" data-aos="fade-in">
+    <h1>Sri Raksha B</h1>
+    
+    <p><span class="typed" data-typed-items="."></span></p>
+    <!-- <h1>Hello</h1>
+      <input type="text" id="email">
+      <button id="send">Send</button>
+      <ul class="text-light" id="result">aaa</ul> -->
+  </div>
+</section><!-- End Hero -->
+
+<main id="main">
+  <div *ngIf="auth.user | async as user">
+    {{user | json}}
+  </div>
+
+  <!-- <div class="mt-2">
+    {{ main.skills | json }}
+  </div> -->
+
+  <div class="mt-2">
+    <h1>Hi there</h1> 
+    <!-- <span *ngFor="let item of dataObj | async ">
+      {{ item | json }}
+    </span> -->
+
+    <!-- <span >
+      {{about | json}}
+    </span> -->
+  </div>
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About</h2>
+        <p>
+          A highly efficient and hard-working individual looking for a 
+          responsible position to gain practical experience and would like to work in a
+           good environment where I can put my best efforts and knowledge to reach the
+           company’s respective goals and objectives, and to improve my skills.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQEYYaHWQHO9UQ/profile-displayphoto-shrink_400_400/0/1653146704300?e=1665014400&v=beta&t=EW4GJXfjtrHSo8sHeg2i0M-C6u64UwElTrccvp3QgME" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>Student at NMAM Institute of technology nitte</h3>
+          <h5 *ngFor="let w in web | json">
+            A
+            <!-- {{web | json}} -->
+          </h5>
+          <p class="font-italic">
+            <span></span>
+          </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+               
+                <li><i class="icofont-rounded-right"></i> <strong>Phone:7899256011</strong> <span id="phone"></span>
+                </li>
+                <li><i class="icofont-rounded-right"></i> <strong>City:Kundapura</strong> <span id="city"></span>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="icofont-rounded-right"></i> <strong>Branch: Information Science</strong> <span id="degree"></span>
+                </li>
+                <li><i class="icofont-rounded-right"></i> <strong>Email: srirakshab2001@gmail.com</strong> <span id="mail"></span>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+          <p>
+            <span id="firePresent"></span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Facts Section ======= -->
+  <!-- <section id="facts" class="facts">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Facts</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+            <div class="count-box">
+              <i class="icofont-simple-smile"></i>
+              <span data-toggle="counter-up">232</span>
+              <p><strong>Happy Clients</strong> consequuntur quae</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="count-box">
+              <i class="icofont-document-folder"></i>
+              <span data-toggle="counter-up">521</span>
+              <p><strong>Projects</strong> adipisci atque cum quia aut</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="count-box">
+              <i class="icofont-live-support"></i>
+              <span data-toggle="counter-up">1,463</span>
+              <p><strong>Hours Of Support</strong> aut commodi quaerat</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="count-box">
+              <i class="icofont-users-alt-5"></i>
+              <span data-toggle="counter-up">15</span>
+              <p><strong>Hard Workers</strong> rerum asperiores dolor</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+  <!-- End Facts Section -->
+
+  <!-- ======= Skills Section ======= -->
+  <section id="skills" class="skills section-bg">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Skills</h2>
+        
+      </div>
+      <ul>
+
+        <li>Programming Skills</li>
+          <ul>
+            <li>C programming</li>
+            <li>C++ programming</li>
+            <li>Python programming</li>
+          </ul>
+      
+        <li>Web technologies</li>
+          <ul>
+            <li>HTML</li>
+              <li>CSS</li>
+              <li>Javascript</li>
+          </ul>
+      
+        <li>Database</li>
+          <ul>
+            <li>MYSQL</li>
+          </ul>
+      
+      </ul>
+
+    </div>
+  </section><!-- End Skills Section -->
+
+  <!-- ======= Resume Section ======= -->
+  <section id="resume" class="resume">
+    <div class="container">
+
+      <div class="section-title">
+        
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up">
+          <!-- <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4>Alex Smith</h4>
+              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and
+                  developing user-centered digital/print marketing material from initial concept to final, polished
+                  deliverable.</em></p>
+              <ul>
+                <li>Portland par 127,Orlando, FL</li>
+                <li>(123) 456-7891</li>
+                <li>alice.barkley@example.com</li>
+              </ul>
+            </div> -->
+
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            <h4>Bachelor of Information science</h4>
+            <h5>2023</h5>
+            <p><em>NMAM Institute Of Technology ,Nitte</em></p>
+            <p><em>CGPA: 8.75</em></p>
+          </div>
+
+          <div class="resume-item">
+            <h4>12th</h4>
+            <h5>2019</h5>
+            <p><em>R N Shetty P U College Kundapura</em></p>
+            <p><em>Percentage : 93</em></p>
+          </div>
+
+          <div class="resume-item">
+            <h4>10th</h4>
+            <h5>2017</h5>
+            <p><em>V K R Acharya memorial english medium highschool</em></p>
+            <p><em>Percentage: 98.08</em></p>
+            
+          </div>
+          <div class="resume-item">
+            <h4>Projects </h4>
+            <p><em>•	Designed a Mini-Project on “Hotel Management System” using HTML and MySQL</em></p>
+            <p><em>•	Designed the “AI Virtual painter “project using python and Open CV</em></p>
+            <p><em>•	Python project on rock paper scissor game</em></p>
+          </div>
+        </div>
+        
+
+        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="resume-title">Internships</h3>
+          <div class="resume-item">
+            <h4>Web application developer</h4>
+            <h5>August 2021</h5>
+            <p><em>Organization : Exposys data labs</em></p>
+            <p><em>Project : E-commerce website </em></p>
+          </div>
+          <div class="resume-item">
+            <h4>Front End developer</h4>
+            <h5>August 2022</h5>
+            <p><em>Organization : DLithe consultance services pvt ltd.</em></p>
+            <p><em>Project : Online CV</em></p>
+          </div>
+          <div class="resume-item">
+            <h4>Growth Intern</h4>
+            <h5>July 2022</h5>
+            <p><em>Organization : Accio Job</em></p>
+          </div>
+          <h3 class="resume-title">Certificates</h3>
+          <div class="resume-item">
+            <h4> </h4>
+            <p><em>•	Big Data Machine Learning Techniques using Spark</em></p>
+            <p><em>•	Course on Robotics process and automation in UiPath</em></p>
+            <p><em>•	Course on Time Management on Infosys Springboard on Sunday, March 2022</em></p>
+            <p><em>•	Coding ninjas course on Introduction to C++ and data structure and algorithms</em></p>
+            
+          
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Resume Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <!-- <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="App 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="Card 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="Web 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="App 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="Card 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="Card 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox"
+                  title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+  <!-- End Portfolio Section -->
+
+  
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Hobbies and interests</h2>
+        <p><em>•	Completed Junior Exam in Bharatnatyam.</em></p>
+        <p><em>•	Won several prizes in Singing competitions held during various occasions.</em></p>
+        <p><em>•	Other hobbies are playing chess, drawing, cooking.</em></p>
+       
+       
+      </div>
+
+    </div>
+  </section><!-- End Testimonials Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+  
+        <div class="section-title">
+          <h2>Personal Profile</h2>
+          <p><em>Date of Birth: 13/05/2001</em></p>
+          <p><em>Address: Shri Vighneshwara Nilaya, Market Road, Vandse, Kundapur, Udupi, Karnataka-576233</em></p>
+          <p><em>Nationality: Indian</em></p>
+          <p><em>Mother Tongue: Kannada</em></p>
+          <p><em>Languages known: English, Kannada, Hindi</em></p>
+         
+         
+        </div>
+  
+      </div>
+    </section><!-- End Testimonials Section -->
+
+      <!-- ======= contact Section ======= -->
+      <section id="contact" class="testimonials section-bg">
+        <div class="container">
+    
+      <!--Section: Contact v.2-->
+<section class="mb-4">
+
+  <!--Section heading-->
+  <h2 class="h1-responsive font-weight-bold text-center my-4">Contact me</h2>
+  <!--Section description-->
+ 
+
+  <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-9 mb-md-0 mb-5">
+          <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="name" name="name" class="form-control">
+                          <label for="name" class="">Your name</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="email" name="email" class="form-control">
+                          <label for="email" class="">Your email</label>
+                      </div>
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <input type="text" id="subject" name="subject" class="form-control">
+                          <label for="subject" class="">Subject</label>
+                      </div>
+                  </div>
+              </div>
+              <!--Grid row-->
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-12">
+
+                      <div class="md-form">
+                          <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                          <label for="message">Your message</label>
+                      </div>
+
+                  </div>
+              </div>
+              <!--Grid row-->
+
+          </form>
+
+          <div class="text-center text-md-left">
+              <a class="btn btn-primary"  >Send</a>
+          </div>
+          <div class="status"></div>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-md-3 text-center">
+          <ul class="list-unstyled mb-0">
+              <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                  <p>Thanking you,</p><p>Sri Raksha B</p><p>NMAMIT,nitte</p>
+              </li>
+
+              <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                  <p>7899256011</p>
+              </li>
+
+              <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                  <p>srirakshab2001@gmail.com</p>
+              </li>
+          </ul>
+      </div>
+      <!--Grid column-->
+
+  </div>
+
+</section>
+<!--Section: Contact v.2-->
+    
+        </div>
+  </section><!-- End Testimonials Section -->
+
+ 
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <!-- <div class="copyright">
+        &copy; Copyright <strong><span>iPortfolio</span></strong>
+      </div> -->
+    <div class="credits">
+      
+    </div>
+  </div>
+</footer><!-- End  Footer -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
